@@ -50,8 +50,7 @@ const index = () => {
         console.error("Error fetching data:", error); 
       });
   }, []);
-  
-  console.log(featuredCategories);
+
 
   return (
     <SafeAreaView className="bg-white pt-5">

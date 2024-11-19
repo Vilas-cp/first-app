@@ -9,14 +9,15 @@ const FeaturedRow = ({
 
   id,
   short_description,
+  restaurants: _restaurants
 }: {
   title: string;
 
   id: string;
   short_description: any;
-  restaurants: any;
+  restaurants: any[];
 }) => {
-  const [restaurants, setRestaurants] = useState([]);
+  const [restaurants, setRestaurants] = useState<any[]>([]);
   useEffect(() => {
     Sanityclient
       .fetch(
@@ -34,9 +35,11 @@ const FeaturedRow = ({
       )
       .then((data) => {
         setRestaurants(data?.restaurants);
+        restaurants.forEach(restaurant => console.log(restaurant.dishes));
       });
   },[id]);
-  console.log(restaurants);
+ 
+ 
 
   return (
     <View>

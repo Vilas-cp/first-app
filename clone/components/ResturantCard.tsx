@@ -42,7 +42,7 @@ const ResturantCard = ({
             genre,
             address,
             short_description,
-            dishes,
+            dishes: JSON.stringify(dishes),
             long,
             lat,
           },
