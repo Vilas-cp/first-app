@@ -10,6 +10,8 @@ import {
   QuestionMarkCircleIcon,
 } from "react-native-heroicons/outline";
 import DishRow from "@/components/Dishrow";
+import React from "react";
+import BaskIcon from "@/components/BaskIcon";
 
 
 
@@ -44,6 +46,8 @@ const Resto = () => {
 
 
   return (
+    <>
+    <BaskIcon/>
     <ScrollView>
       <View className="relative">
         <Image
@@ -82,7 +86,7 @@ const Resto = () => {
           </Text>
           <ChevronRightIcon color={"#00CCBB"} size={20} />
         </TouchableOpacity>
-        <View>
+        <View className="pb-[150px]">
           <Text className="px-4 pt-6 mb-3 font-bold text-xl">Menu</Text>
           {dishes.map((dish:any) => (
             
@@ -99,6 +103,7 @@ const Resto = () => {
         </View>
       </View>
     </ScrollView>
+    </>
   );
 };
 

@@ -10,6 +10,7 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="index" />
         <Stack.Screen name="resto" />
+        <Stack.Screen name="basket" options={{ presentation: "modal", headerShown: false }}/>
       </Stack>
     </Provider>
   );
