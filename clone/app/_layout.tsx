@@ -1,10 +1,16 @@
-import {Stack} from 'expo-router';
-import '../global.css'
+import { Stack } from "expo-router";
+import "../global.css";
+import { Provider } from "react-redux";
+import store from "../store";
+
+
 export default function RootLayout() {
-    return (
-        <Stack>
-            <Stack.Screen name="index" />
-            <Stack.Screen name="resto" />
-        </Stack>
-    )
-} 
+  return (
+    <Provider store={store} >
+      <Stack>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="resto" />
+      </Stack>
+    </Provider>
+  );
+}
