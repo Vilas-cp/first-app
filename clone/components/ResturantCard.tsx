@@ -3,6 +3,7 @@ import React from 'react'
 import { StarIcon } from 'react-native-heroicons/solid';
 import {MapPinIcon} from 'react-native-heroicons/outline'
 import { uriFor } from '../sanity';
+import { useRouter } from 'expo-router';
 
 const ResturantCard = ({
     id,
@@ -27,8 +28,27 @@ const ResturantCard = ({
     long: number;
     lat: number;
 }) => {
+    const router = useRouter();
   return (
-    <TouchableOpacity className='bg-white mr-3 shadow '>
+    <TouchableOpacity className='bg-white mr-3 shadow '
+    onPress={() => {
+        router.push({
+          pathname: '/resto',
+          params: {
+            id,
+            imgUrl: uriFor(imgUrl).url(),
+            title,
+            rating,
+            genre,
+            address,
+            short_description,
+            dishes,
+            long,
+            lat,
+          },
+        });
+      }}
+    >
      <Image source={{uri: uriFor(imgUrl).url()}} className="h-36 w-64 rounded-sm"/>
      <View className='px-3 pb-4'>
         <Text className='font-bold text-lg pt-2'>{title}</Text>

@@ -20,6 +20,7 @@ import FeaturedRow from "@/components/FeaturedRow";
 
 import client from "../sanity";
 
+
 const index = () => {
   const navigation = useNavigation();
   const [featuredCategories, setFeaturedCategories] = useState<any[]>([]);
